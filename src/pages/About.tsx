@@ -118,7 +118,7 @@ export default function About() {
                         <div className="about-hero-image order-1 lg:order-2 perspective flex justify-center">
                             <div className="relative w-full max-w-[400px] aspect-square rounded-[2.5rem] overflow-hidden shadow-elevated shine rotate-2 hover:rotate-0 transition-transform duration-700">
                                 <img
-                                    src="/featured_main.jpg"
+                                    src="https://ik.imagekit.io/72whyqnco/Products/6.jpg"
                                     alt="Crafting Process"
                                     className="w-full h-full object-cover"
                                 />
@@ -200,7 +200,7 @@ export default function About() {
                 <section className="vision-section max-w-7xl mx-auto px-6 lg:px-12 mb-16">
                     <div className="relative h-[400px] lg:h-[600px] rounded-[3.5rem] overflow-hidden shadow-elevated">
                         <img
-                            src="/hero_card_c.jpg"
+                            src="https://ik.imagekit.io/72whyqnco/Products/7.jpg"
                             alt="Artisanal Setup"
                             className="w-full h-full object-cover"
                         />

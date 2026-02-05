@@ -18,17 +18,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const quickLinks = [
   { label: 'Home', href: '/', isRoute: true },
-  { label: 'Products', href: '#products', isRoute: false },
-  { label: 'Collections', href: '#collections', isRoute: false },
+  { label: 'Products', href: '/all-products', isRoute: true },
+  { label: 'Collections', href: '/all-products', isRoute: true },
   { label: 'About Us', href: '/about', isRoute: true },
   { label: 'Contact Us', href: '/contact', isRoute: true },
 ];
 
 const supportLinks = [
-  { label: 'Shipping Info', href: '#' },
-  { label: 'Returns Policy', href: '#' },
-  { label: 'FAQ', href: '#' },
-  { label: 'Track Order', href: '#' },
+  { label: 'Shipping Info', href: '/faq', isRoute: true },
+  { label: 'Returns Policy', href: '/returns', isRoute: true },
+  { label: 'FAQ', href: '/faq', isRoute: true },
+  { label: 'Terms & Conditions', href: '/terms', isRoute: true },
 ];
 
 const socialLinks = [
@@ -114,14 +114,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-rose to-brand-taupe flex items-center justify-center">
-                <span className="font-display text-lg text-white font-semibold">D</span>
+            <Link to="/" className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-full bg-white overflow-hidden flex items-center justify-center p-1.5">
+                <img src="/dieuclat-logo.png" alt="Dieuclat Logo" className="w-full h-full object-contain" />
               </div>
               <span className="font-display text-2xl font-semibold text-white">
                 DIEUCLAT
               </span>
-            </a>
+            </Link>
             <p className="font-body text-sm text-white/40 leading-relaxed mb-6">
               Crafting memorable gifting experiences since 2020. Every gift tells a story.
             </p>
@@ -179,12 +179,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {supportLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="font-body text-sm text-white/40 hover:text-brand-rose transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="font-body text-sm text-white/40 hover:text-brand-rose transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="font-body text-sm text-white/40 hover:text-brand-rose transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

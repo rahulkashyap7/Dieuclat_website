@@ -13,7 +13,7 @@ const dealProducts = [
     price: '₹1,899',
     originalPrice: '₹2,499',
     discount: '24%',
-    image: '/hero_card_b.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/6.jpg',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const dealProducts = [
     price: '₹2,199',
     originalPrice: '₹2,799',
     discount: '21%',
-    image: '/featured_main.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/7.jpg',
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const dealProducts = [
     price: '₹2,499',
     originalPrice: '₹3,199',
     discount: '22%',
-    image: '/builder_preview.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/10.jpg',
   },
 ];
 
@@ -52,7 +52,7 @@ export default function DealOfDay() {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         let { days, hours, minutes, seconds } = prev;
-        
+
         if (seconds > 0) {
           seconds--;
         } else {
@@ -71,7 +71,7 @@ export default function DealOfDay() {
             }
           }
         }
-        
+
         return { days, hours, minutes, seconds };
       });
     }, 1000);
@@ -162,7 +162,7 @@ export default function DealOfDay() {
     >
       {/* Warm Background */}
       <div className="absolute inset-0 bg-warm-dark" />
-      
+
       {/* Decorative orbs */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-brand-rose/10 blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-brand-sage/10 blur-[100px]" />
@@ -183,7 +183,7 @@ export default function DealOfDay() {
         </div>
 
         {/* Countdown Timer */}
-        <div 
+        <div
           ref={timerRef}
           className="flex justify-center gap-3 lg:gap-5 mb-12 lg:mb-16"
         >
@@ -192,14 +192,14 @@ export default function DealOfDay() {
               <div className="relative w-16 h-16 lg:w-24 lg:h-24">
                 {/* Background with gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-rose to-brand-rose-light rounded-2xl lg:rounded-3xl shadow-glow" />
-                
+
                 {/* Glass overlay */}
                 <div className="absolute inset-1 bg-white/20 backdrop-blur-sm rounded-xl lg:rounded-2xl flex items-center justify-center">
                   <span className="font-display text-2xl lg:text-4xl text-white font-semibold">
                     {formatNumber(item.value)}
                   </span>
                 </div>
-                
+
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 rounded-2xl lg:rounded-3xl overflow-hidden">
                   <div className="absolute inset-0 animate-shimmer" />
@@ -252,7 +252,7 @@ export default function DealOfDay() {
                   <p className="font-body text-sm text-brand-charcoal/50 mb-4 line-clamp-2">
                     {product.description}
                   </p>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-body text-xl font-semibold text-brand-rose">

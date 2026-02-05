@@ -50,10 +50,10 @@ export default function ImagePreview({ image, onClose }: ImagePreviewProps) {
             />
 
             {/* Content */}
-            <div className="preview-content relative w-full max-w-4xl aspect-square lg:aspect-video bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <div className="preview-content relative w-full max-w-5xl bg-brand-warm-light/50 rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center max-h-[85vh]">
                 <button
                     onClick={handleClose}
-                    className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center text-white transition-all active:scale-95"
+                    className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-brand-charcoal/20 hover:bg-brand-charcoal/40 backdrop-blur-md flex items-center justify-center text-white transition-all active:scale-95"
                 >
                     <X className="w-5 h-5" />
                 </button>
@@ -61,7 +61,7 @@ export default function ImagePreview({ image, onClose }: ImagePreviewProps) {
                 <img
                     src={image}
                     alt="Product Preview"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full max-h-[85vh] object-contain"
                 />
 
                 {/* Subtle Gradient Overlay for depth */}

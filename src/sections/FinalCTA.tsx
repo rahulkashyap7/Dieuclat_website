@@ -11,7 +11,7 @@ export default function FinalCTA() {
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-  
+
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -130,7 +130,7 @@ export default function FinalCTA() {
               <p className="font-body text-sm text-brand-taupe mb-4">
                 Get gifting inspiration
               </p>
-              
+
               {isSubscribed ? (
                 <div className="flex items-center gap-2 text-brand-coral">
                   <Mail className="w-5 h-5" />
@@ -164,7 +164,7 @@ export default function FinalCTA() {
           >
             <div className="absolute inset-0">
               <img
-                src="/final_cta_peek.jpg"
+                src="https://ik.imagekit.io/72whyqnco/Products/8.jpg"
                 alt="Gift bundle"
                 className="w-full h-full object-cover"
               />

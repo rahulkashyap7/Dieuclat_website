@@ -176,7 +176,7 @@ export default function Hero() {
               >
                 <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-elevated shine">
                   <img
-                    src="/hero_card_a.jpg"
+                    src="https://ik.imagekit.io/72whyqnco/Products/1.jpg"
                     alt="Premium gift hamper"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -197,7 +197,7 @@ export default function Hero() {
               >
                 <div className="aspect-square rounded-[2rem] overflow-hidden shadow-elevated shine">
                   <img
-                    src="/hero_card_b.jpg"
+                    src="https://ik.imagekit.io/72whyqnco/Products/4.jpg"
                     alt="Curated gift box"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -211,7 +211,7 @@ export default function Hero() {
               >
                 <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated shine">
                   <img
-                    src="/hero_card_c.jpg"
+                    src="https://ik.imagekit.io/72whyqnco/Products/10.jpg"
                     alt="Wrapped gift"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -227,7 +227,7 @@ export default function Hero() {
             <div className="lg:hidden">
               <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-elevated">
                 <img
-                  src="/hero_card_a.jpg"
+                  src="https://ik.imagekit.io/72whyqnco/Products/4.jpg"
                   alt="Premium gift hamper"
                   className="w-full h-full object-cover"
                 />

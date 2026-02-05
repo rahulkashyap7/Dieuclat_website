@@ -10,7 +10,7 @@ const collections = [
     id: 1,
     name: 'Birthday Special',
     subtitle: 'Make their day unforgettable',
-    image: '/category_birthdays.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/1.jpg',
     count: '24',
     color: 'from-rose-400 to-pink-500',
   },
@@ -18,7 +18,7 @@ const collections = [
     id: 2,
     name: 'Anniversary Collection',
     subtitle: 'Celebrate your love story',
-    image: '/category_anniversaries.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/2.jpg',
     count: '18',
     color: 'from-amber-400 to-orange-500',
   },
@@ -26,7 +26,7 @@ const collections = [
     id: 3,
     name: 'Thank You Hampers',
     subtitle: 'Show your appreciation',
-    image: '/category_thankyou.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/3.jpg',
     count: '15',
     color: 'from-emerald-400 to-teal-500',
   },
@@ -34,7 +34,7 @@ const collections = [
     id: 4,
     name: 'Just Because',
     subtitle: 'Surprise someone special',
-    image: '/category_justbecause.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/4.jpg',
     count: '12',
     color: 'from-violet-400 to-purple-500',
   },
@@ -101,7 +101,7 @@ export default function Collections() {
     >
       {/* Warm Background */}
       <div className="absolute inset-0 bg-warm-dark" />
-      
+
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-brand-rose/8 blur-[120px]" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-sage/8 blur-[100px]" />
@@ -136,10 +136,10 @@ export default function Collections() {
                   alt={collection.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-brand-charcoal/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
-                
+
                 {/* Count Badge */}
                 <div className="absolute top-5 left-5 glass-warm rounded-full px-4 py-1.5">
                   <span className="font-body text-xs font-semibold text-brand-charcoal">

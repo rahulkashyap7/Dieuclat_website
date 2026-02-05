@@ -147,7 +147,7 @@ export default function CorporateEvents() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden card-shadow">
                 <img
-                  src="/corporate_image.jpg"
+                  src="https://ik.imagekit.io/72whyqnco/Products/2.jpg"
                   alt="Corporate gifting"
                   className="w-full h-full object-cover"
                 />

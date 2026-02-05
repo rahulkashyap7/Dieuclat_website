@@ -15,7 +15,7 @@ const products = [
     originalPrice: '₹2,800',
     rating: 4.9,
     reviews: 128,
-    image: '/hero_card_a.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/1.jpg',
     tag: 'Bestseller',
     tagColor: 'from-amber-400 to-orange-500',
   },
@@ -26,7 +26,7 @@ const products = [
     originalPrice: '₹3,200',
     rating: 5.0,
     reviews: 96,
-    image: '/featured_main.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/2.jpg',
     tag: 'New',
     tagColor: 'from-emerald-400 to-teal-500',
   },
@@ -37,7 +37,7 @@ const products = [
     originalPrice: '₹3,600',
     rating: 4.8,
     reviews: 84,
-    image: '/hero_card_c.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/3.jpg',
     tag: null,
     tagColor: '',
   },
@@ -48,9 +48,64 @@ const products = [
     originalPrice: '₹5,000',
     rating: 4.7,
     reviews: 64,
-    image: '/hero_card_b.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/4.jpg',
     tag: 'Limited',
     tagColor: 'from-purple-400 to-pink-500',
+  },
+  {
+    id: 5,
+    name: 'Artisan Bliss Box',
+    price: '₹3,500',
+    originalPrice: '₹4,000',
+    rating: 4.6,
+    reviews: 52,
+    image: 'https://ik.imagekit.io/72whyqnco/Products/5.jpg',
+    tag: 'Trending',
+    tagColor: 'from-blue-400 to-cyan-500',
+  },
+  {
+    id: 6,
+    name: 'Scented Harmony',
+    price: '₹1,800',
+    originalPrice: '₹2,200',
+    rating: 4.9,
+    reviews: 112,
+    image: 'https://ik.imagekit.io/72whyqnco/Products/6.jpg',
+    tag: null,
+    tagColor: '',
+  },
+  {
+    id: 7,
+    name: 'Midnight Elegance',
+    price: '₹5,200',
+    originalPrice: '₹6,000',
+    rating: 5.0,
+    reviews: 45,
+    image: 'https://ik.imagekit.io/72whyqnco/Products/7.jpg',
+    tag: 'Premium',
+    tagColor: 'from-brand-charcoal to-brand-brown',
+  },
+  {
+    id: 8,
+    name: 'Botanical Blush',
+    price: '₹2,600',
+    originalPrice: '₹3,000',
+    rating: 4.7,
+    reviews: 78,
+    image: 'https://ik.imagekit.io/72whyqnco/Products/8.jpg',
+    tag: null,
+    tagColor: '',
+  },
+  {
+    id: 9,
+    name: 'Classic Keepsake',
+    price: '₹3,800',
+    originalPrice: '₹4,200',
+    rating: 4.8,
+    reviews: 91,
+    image: 'https://ik.imagekit.io/72whyqnco/Products/10.jpg',
+    tag: 'Classic',
+    tagColor: 'from-brand-rose to-brand-coral',
   },
 ];
 
@@ -137,7 +192,7 @@ export default function Products() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-          {products.map((product, index) => (
+          {products.slice(0, 4).map((product, index) => (
             <div
               key={product.id}
               ref={(el) => { cardsRef.current[index] = el; }}

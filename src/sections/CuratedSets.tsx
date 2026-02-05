@@ -11,21 +11,21 @@ const products = [
     name: 'The Bloom Box',
     price: '₹2,800',
     rating: 4.9,
-    image: '/hero_card_a.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/1.jpg',
   },
   {
     id: 2,
     name: 'Sweet Indulgence',
     price: '₹1,950',
     rating: 4.8,
-    image: '/hero_card_b.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/2.jpg',
   },
   {
     id: 3,
     name: 'Linen & Love',
     price: '₹3,200',
     rating: 5.0,
-    image: '/hero_card_c.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/3.jpg',
   },
 ];
 

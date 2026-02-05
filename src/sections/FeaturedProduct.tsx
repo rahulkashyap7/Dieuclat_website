@@ -6,9 +6,9 @@ import { ShoppingBag, Eye } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const thumbnails = [
-  { id: 1, image: '/featured_thumb_1.jpg', alt: 'Artisan chocolates' },
-  { id: 2, image: '/featured_thumb_2.jpg', alt: 'Scented candle' },
-  { id: 3, image: '/featured_thumb_3.jpg', alt: 'Handwritten note' },
+  { id: 1, image: 'https://ik.imagekit.io/72whyqnco/Products/6.jpg', alt: 'Artisan chocolates' },
+  { id: 2, image: 'https://ik.imagekit.io/72whyqnco/Products/7.jpg', alt: 'Scented candle' },
+  { id: 3, image: 'https://ik.imagekit.io/72whyqnco/Products/8.jpg', alt: 'Handwritten note' },
 ];
 
 export default function FeaturedProduct() {
@@ -157,7 +157,7 @@ export default function FeaturedProduct() {
         >
           <div className="aspect-[4/3] rounded-2xl overflow-hidden card-shadow">
             <img
-              src="/featured_main.jpg"
+              src="https://ik.imagekit.io/72whyqnco/Products/5.jpg"
               alt="The Birthday Box"
               className="w-full h-full object-cover"
             />
@@ -191,7 +191,7 @@ export default function FeaturedProduct() {
         <div className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 w-28 opacity-50">
           <div className="aspect-square rounded-xl overflow-hidden card-shadow">
             <img
-              src="/featured_main.jpg"
+              src="https://ik.imagekit.io/72whyqnco/Products/5.jpg"
               alt="The Birthday Box"
               className="w-full h-full object-cover"
             />

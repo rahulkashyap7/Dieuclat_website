@@ -128,7 +128,7 @@ export default function WhyChoose() {
       {/* Warm Background */}
       <div className="absolute inset-0 bg-warm" />
       <div className="absolute inset-0 gradient-warm" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-brand-rose/8 blur-[80px]" />
       <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-brand-sage/8 blur-[100px]" />
@@ -149,7 +149,7 @@ export default function WhyChoose() {
         </div>
 
         {/* Refined Bento Grid */}
-        <div 
+        <div
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-5 auto-rows-fr"
         >
@@ -159,7 +159,7 @@ export default function WhyChoose() {
               {/* Animated background decoration */}
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-rose-300/40 to-pink-200/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-pink-200/30 to-transparent rounded-full blur-2xl" />
-              
+
               {/* Icon with enhanced styling */}
               <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-rose-400 via-pink-500 to-rose-600 flex items-center justify-center mb-8 shadow-xl shadow-rose-300/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <Gem className="w-9 h-9 text-white drop-shadow-lg" />
@@ -177,8 +177,25 @@ export default function WhyChoose() {
               <div className="relative mt-auto space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="w-11 h-11 rounded-full border-3 border-white bg-gradient-to-br from-rose-200 to-pink-200 shadow-md ring-2 ring-white/50" />
+                    {[
+                      { url: "https://ik.imagekit.io/72whyqnco/Users/myPhoto.jpg", name: "Rahul" },
+                      { url: "https://ik.imagekit.io/72whyqnco/Users/Freepik%20_%20Find%20the%20right%20plan%20for%20you.jpg", name: "Raghav" },
+                      { url: "https://ik.imagekit.io/72whyqnco/Users/Dm%20for%20your%20Dp%20edits%209072323523.jpg", name: "Melvyn" }
+                    ].map((user, i) => (
+                      <div key={i} className="relative group/tooltip">
+                        <div className="w-11 h-11 rounded-full border-3 border-white shadow-md ring-2 ring-white/50 overflow-hidden bg-brand-cream cursor-pointer">
+                          <img
+                            src={user.url}
+                            alt={user.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        {/* Tooltip */}
+                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-brand-charcoal text-white text-[10px] font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-20 translate-y-2 group-hover/tooltip:translate-y-0 shadow-lg">
+                          {user.name}
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-brand-charcoal" />
+                        </div>
+                      </div>
                     ))}
                   </div>
                   <div>
@@ -199,7 +216,7 @@ export default function WhyChoose() {
           <div className="bento-item md:col-span-1 lg:col-span-3 group">
             <div className="relative h-full min-h-[200px] bg-gradient-to-br from-amber-50 via-orange-50/80 to-amber-50/50 rounded-3xl p-6 lg:p-8 overflow-hidden border border-amber-100/60 card-lift backdrop-blur-sm">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-200/40 to-orange-100/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
-              
+
               <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 flex items-center justify-center mb-5 shadow-lg shadow-amber-200/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <Palette className="w-7 h-7 text-white drop-shadow-md" />
               </div>
@@ -217,7 +234,7 @@ export default function WhyChoose() {
           <div className="bento-item md:col-span-1 lg:col-span-3 group">
             <div className="relative h-full min-h-[200px] bg-gradient-to-br from-emerald-50 via-teal-50/80 to-emerald-50/50 rounded-3xl p-6 lg:p-8 overflow-hidden border border-emerald-100/60 card-lift backdrop-blur-sm">
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-200/40 to-teal-100/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
-              
+
               <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-emerald-600 flex items-center justify-center mb-5 shadow-lg shadow-emerald-200/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <Leaf className="w-7 h-7 text-white drop-shadow-md" />
               </div>
@@ -235,7 +252,7 @@ export default function WhyChoose() {
           <div className="bento-item md:col-span-1 lg:col-span-2 group">
             <div className="relative h-full min-h-[200px] bg-gradient-to-br from-pink-50 via-rose-50/80 to-pink-50/50 rounded-3xl p-6 lg:p-8 overflow-hidden border border-pink-100/60 card-lift backdrop-blur-sm">
               <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-pink-200/40 to-rose-100/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
-              
+
               <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 via-rose-500 to-pink-600 flex items-center justify-center mb-5 shadow-lg shadow-pink-200/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <Heart className="w-7 h-7 text-white drop-shadow-md" />
               </div>
@@ -253,7 +270,7 @@ export default function WhyChoose() {
           <div className="bento-item md:col-span-2 lg:col-span-2 group">
             <div className="relative h-full min-h-[200px] bg-gradient-to-br from-blue-50 via-indigo-50/80 to-blue-50/50 rounded-3xl p-6 lg:p-8 overflow-hidden border border-blue-100/60 card-lift backdrop-blur-sm">
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-200/40 to-indigo-100/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              
+
               <div className="flex items-start gap-5">
                 <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 via-indigo-500 to-blue-600 flex items-center justify-center shadow-xl shadow-blue-200/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
                   <Truck className="w-8 h-8 text-white drop-shadow-md" />
@@ -266,7 +283,7 @@ export default function WhyChoose() {
                   <p className="relative font-body text-sm lg:text-base text-brand-charcoal/60 leading-relaxed mb-5">
                     Complimentary delivery on all orders across India. No minimum order required.
                   </p>
-                  
+
                   {/* Delivery stats */}
                   <div className="flex items-center gap-5">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/50 backdrop-blur-sm">
@@ -287,7 +304,7 @@ export default function WhyChoose() {
           <div className="bento-item md:col-span-1 lg:col-span-2 group">
             <div className="relative h-full min-h-[200px] bg-gradient-to-br from-violet-50 via-purple-50/80 to-violet-50/50 rounded-3xl p-6 lg:p-8 overflow-hidden border border-violet-100/60 card-lift backdrop-blur-sm">
               <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-violet-200/40 to-purple-100/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
-              
+
               <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-400 via-purple-500 to-violet-600 flex items-center justify-center mb-5 shadow-lg shadow-violet-200/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <Award className="w-7 h-7 text-white drop-shadow-md" />
               </div>

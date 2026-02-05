@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import AllProducts from './pages/AllProducts';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
+import ReturnPolicy from './pages/ReturnPolicy';
+import TermsPolicy from './pages/TermsPolicy';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/returns" element={<ReturnPolicy />} />
+        <Route path="/terms" element={<TermsPolicy />} />
       </Routes>
 
       {/* Footer is on every page, but some pages might want their own layout if they have special needs. 

@@ -9,25 +9,25 @@ const categories = [
   {
     id: 1,
     name: 'Birthdays',
-    image: '/category_birthdays.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/1.jpg',
     count: '24 gifts',
   },
   {
     id: 2,
     name: 'Anniversaries',
-    image: '/category_anniversaries.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/2.jpg',
     count: '18 gifts',
   },
   {
     id: 3,
     name: 'Thank You',
-    image: '/category_thankyou.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/3.jpg',
     count: '15 gifts',
   },
   {
     id: 4,
     name: 'Just Because',
-    image: '/category_justbecause.jpg',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/4.jpg',
     count: '12 gifts',
   },
 ];

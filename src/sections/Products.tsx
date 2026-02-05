@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Star, ShoppingBag, Heart, Eye, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ImagePreview from '../components/ImagePreview';
+import { useCart } from '../context/CartContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,6 +115,7 @@ export default function Products() {
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -210,14 +212,14 @@ export default function Products() {
 
                 {/* Action Buttons */}
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 z-10 flex flex-col gap-1 md:gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                  <button className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90">
-                    <Heart className="w-3 md:w-3.5 h-3 md:h-3.5" />
+                  <button className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90">
+                    <Heart className="w-4 md:w-5 h-4 md:h-5" />
                   </button>
                   <button
                     onClick={() => setPreviewImage(product.image)}
-                    className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90"
+                    className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90"
                   >
-                    <Eye className="w-3 md:w-3.5 h-3 md:h-3.5" />
+                    <Eye className="w-4 md:w-5 h-4 md:h-5" />
                   </button>
                 </div>
 
@@ -261,7 +263,10 @@ export default function Products() {
                       </span>
                     </div>
 
-                    <button className="flex items-center justify-center h-8 md:h-9 px-2 md:px-3 bg-brand-charcoal text-white font-body text-[9px] md:text-[10px] font-medium rounded-lg hover:bg-brand-rose transition-all duration-300 group/btn overflow-hidden relative shadow-soft shrink-0">
+                    <button
+                      onClick={() => addToCart(product)}
+                      className="flex items-center justify-center h-8 md:h-9 px-2 md:px-3 bg-brand-charcoal text-white font-body text-[9px] md:text-[10px] font-medium rounded-lg hover:bg-brand-rose transition-all duration-300 group/btn overflow-hidden relative shadow-soft shrink-0"
+                    >
                       <span className="relative z-10 flex items-center gap-1 md:gap-1.5">
                         <ShoppingBag className="w-3 md:w-3.5 h-3 md:h-3.5" />
                         Add

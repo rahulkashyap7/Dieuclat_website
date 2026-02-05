@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShoppingBag, Eye } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,14 @@ export default function FeaturedProduct() {
   const cardRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
+  const { addToCart } = useCart();
+
+  const featuredProduct = {
+    id: 100, // Unique ID for featured product
+    name: 'The Birthday Box',
+    price: '₹2,400',
+    image: 'https://ik.imagekit.io/72whyqnco/Products/5.jpg',
+  };
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -133,7 +142,10 @@ export default function FeaturedProduct() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4">
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-brand-coral text-white font-body text-sm font-medium rounded-full hover:bg-brand-coral/90 transition-all">
+            <button
+              onClick={() => addToCart(featuredProduct)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-coral text-white font-body text-sm font-medium rounded-full hover:bg-brand-coral/90 transition-all"
+            >
               <ShoppingBag className="w-4 h-4" />
               Add to Cart
             </button>

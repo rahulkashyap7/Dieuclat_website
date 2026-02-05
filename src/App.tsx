@@ -9,33 +9,40 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import ReturnPolicy from './pages/ReturnPolicy';
 import TermsPolicy from './pages/TermsPolicy';
+import { CartProvider } from './context/CartContext';
+import CartDrawer from './components/CartDrawer';
 
 function App() {
   return (
-    <div className="relative bg-warm">
-      {/* Custom Cursor */}
-      <CustomCursor />
+    <CartProvider>
+      <div className="relative bg-warm">
+        {/* Custom Cursor */}
+        <CustomCursor />
 
-      {/* Subtle Grain Overlay */}
-      <div className="grain-overlay" />
+        {/* Subtle Grain Overlay */}
+        <div className="grain-overlay" />
 
-      {/* Navigation */}
-      <Navbar />
+        {/* Navigation */}
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/all-products" element={<AllProducts />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/returns" element={<ReturnPolicy />} />
-        <Route path="/terms" element={<TermsPolicy />} />
-      </Routes>
+        {/* Cart Drawer */}
+        <CartDrawer />
 
-      {/* Footer is on every page, but some pages might want their own layout if they have special needs. 
-          For now, keeping it here is fine, but Navbar and Footer might need to know about the current route. */}
-      <Footer />
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-products" element={<AllProducts />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/returns" element={<ReturnPolicy />} />
+          <Route path="/terms" element={<TermsPolicy />} />
+        </Routes>
+
+        {/* Footer is on every page, but some pages might want their own layout if they have special needs. 
+            For now, keeping it here is fine, but Navbar and Footer might need to know about the current route. */}
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }
 

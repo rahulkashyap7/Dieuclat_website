@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 const navLinks = [
   { label: 'Shop', href: '#products', isRoute: false },
@@ -16,6 +17,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { cartCount, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const nav = navRef.current;
@@ -85,13 +87,16 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <button
+              onClick={() => setIsCartOpen(true)}
               className="relative w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-brand-charcoal transition-all shadow-soft hover:shadow-elevated"
               aria-label="Cart"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-brand-rose text-white text-[10px] font-semibold rounded-full flex items-center justify-center">
-                2
-              </span>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-brand-rose text-white text-[10px] font-semibold rounded-full flex items-center justify-center animate-in zoom-in duration-300">
+                  {cartCount}
+                </span>
+              )}
             </button>
 
             {/* Mobile Menu Button */}

@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Star, ShoppingBag } from 'lucide-react';
@@ -119,14 +120,14 @@ export default function CuratedSets() {
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-500 hover:shadow-elevated hover:-translate-y-1.5">
                 {/* Image */}
-                <div className="aspect-[4/5] overflow-hidden relative">
+                <Link to={`/product/${product.id}`} className="block aspect-[4/5] overflow-hidden relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-brand-charcoal/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-5 lg:p-6">
@@ -143,9 +144,11 @@ export default function CuratedSets() {
                   </div>
 
                   <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-display text-xl lg:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors duration-300">
-                      {product.name}
-                    </h3>
+                    <Link to={`/product/${product.id}`}>
+                      <h3 className="font-display text-xl lg:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors duration-300">
+                        {product.name}
+                      </h3>
+                    </Link>
                     <button
                       onClick={() => addToCart(product)}
                       className="w-10 h-10 rounded-full bg-brand-charcoal text-white flex items-center justify-center hover:bg-brand-rose transition-all shadow-soft active:scale-90 shrink-0"

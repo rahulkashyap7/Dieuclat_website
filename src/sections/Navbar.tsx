@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { ShoppingBag, Menu, X, Heart } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 const navLinks = [
   { label: 'Shop', href: '#products', isRoute: false },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { cartCount, setIsCartOpen } = useCart();
+  const { wishlistCount, setIsWishlistOpen } = useWishlist();
 
   useEffect(() => {
     const nav = navRef.current;
@@ -86,6 +88,19 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsWishlistOpen(true)}
+              className="relative w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-brand-charcoal transition-all shadow-soft hover:shadow-elevated"
+              aria-label="Wishlist"
+            >
+              <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-brand-rose text-brand-rose' : ''}`} />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-brand-rose text-white text-[10px] font-semibold rounded-full flex items-center justify-center animate-in zoom-in duration-300">
+                  {wishlistCount}
+                </span>
+              )}
+            </button>
+
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-brand-charcoal transition-all shadow-soft hover:shadow-elevated"

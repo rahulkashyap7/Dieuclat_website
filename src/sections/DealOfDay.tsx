@@ -2,12 +2,13 @@ import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShoppingBag, Zap, Percent, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 gsap.registerPlugin(ScrollTrigger);
-
 const dealProducts = [
   {
-    id: 1,
+    id: 301,
     name: 'Dried Flower Wall Art',
     description: 'Beautiful preserved blooms arranged in a premium frame',
     price: '₹1,899',
@@ -16,7 +17,7 @@ const dealProducts = [
     image: 'https://ik.imagekit.io/72whyqnco/Products/6.jpg',
   },
   {
-    id: 2,
+    id: 302,
     name: 'Luxury Gift Hamper',
     description: 'Curated selection of artisan treats and blooms',
     price: '₹2,199',
@@ -25,7 +26,7 @@ const dealProducts = [
     image: 'https://ik.imagekit.io/72whyqnco/Products/7.jpg',
   },
   {
-    id: 3,
+    id: 303,
     name: 'Signature Bloom Box',
     description: 'Our bestselling arrangement in a keepsake box',
     price: '₹2,499',
@@ -36,6 +37,7 @@ const dealProducts = [
 ];
 
 export default function DealOfDay() {
+  const { addToCart } = useCart();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<HTMLDivElement>(null);
@@ -236,19 +238,21 @@ export default function DealOfDay() {
                 </div>
 
                 {/* Image */}
-                <div className="aspect-[4/3] overflow-hidden bg-brand-cream/50">
+                <Link to={`/product/${product.id}`} className="block aspect-[4/3] overflow-hidden bg-brand-cream/50">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-display text-xl text-brand-charcoal mb-2 group-hover:text-brand-rose transition-colors duration-300">
-                    {product.name}
-                  </h3>
+                  <Link to={`/product/${product.id}`}>
+                    <h3 className="font-display text-xl text-brand-charcoal mb-2 group-hover:text-brand-rose transition-colors duration-300">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <p className="font-body text-sm text-brand-charcoal/50 mb-4 line-clamp-2">
                     {product.description}
                   </p>
@@ -262,7 +266,10 @@ export default function DealOfDay() {
                         {product.originalPrice}
                       </span>
                     </div>
-                    <button className="flex items-center gap-2 px-4 py-2.5 bg-brand-charcoal text-white font-body text-sm font-medium rounded-full hover:bg-brand-rose transition-all duration-300">
+                    <button
+                      onClick={() => addToCart(product)}
+                      className="flex items-center gap-2 px-4 py-2.5 bg-brand-charcoal text-white font-body text-sm font-medium rounded-full hover:bg-brand-rose transition-all duration-300 active:scale-95"
+                    >
                       <ShoppingBag className="w-4 h-4" />
                       Add
                     </button>

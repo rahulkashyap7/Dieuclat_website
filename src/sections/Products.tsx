@@ -5,8 +5,11 @@ import { Star, ShoppingBag, Heart, Eye, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ImagePreview from '../components/ImagePreview';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 gsap.registerPlugin(ScrollTrigger);
+// ... existing products ...
+// I'll skip the products array and go to the component
 
 const products = [
   {
@@ -116,6 +119,7 @@ export default function Products() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -212,8 +216,11 @@ export default function Products() {
 
                 {/* Action Buttons */}
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 z-10 flex flex-col gap-1 md:gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                  <button className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90">
-                    <Heart className="w-4 md:w-5 h-4 md:h-5" />
+                  <button
+                    onClick={() => isInWishlist(product.id) ? removeFromWishlist(product.id) : addToWishlist(product)}
+                    className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-charcoal/40 hover:text-brand-rose hover:bg-white transition-all shadow-soft active:scale-90"
+                  >
+                    <Heart className={`w-4 md:w-5 h-4 md:h-5 ${isInWishlist(product.id) ? 'fill-brand-rose text-brand-rose' : ''}`} />
                   </button>
                   <button
                     onClick={() => setPreviewImage(product.image)}
@@ -224,13 +231,13 @@ export default function Products() {
                 </div>
 
                 {/* Image */}
-                <div className="aspect-square overflow-hidden bg-brand-cream/50">
+                <Link to={`/product/${product.id}`} className="block aspect-square overflow-hidden bg-brand-cream/50">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-3 md:p-4">
@@ -248,9 +255,11 @@ export default function Products() {
                   </div>
 
                   {/* Name */}
-                  <h3 className="font-display text-sm md:text-base lg:text-lg text-brand-charcoal mb-2 md:mb-3 group-hover:text-brand-rose transition-colors duration-300 line-clamp-1">
-                    {product.name}
-                  </h3>
+                  <Link to={`/product/${product.id}`}>
+                    <h3 className="font-display text-sm md:text-base lg:text-lg text-brand-charcoal mb-2 md:mb-3 group-hover:text-brand-rose transition-colors duration-300 line-clamp-1">
+                      {product.name}
+                    </h3>
+                  </Link>
 
                   {/* Price & Add to Cart */}
                   <div className="flex items-center justify-between gap-1.5 md:gap-2">

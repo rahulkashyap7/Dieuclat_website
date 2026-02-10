@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { X, Minus, Plus, ShoppingBag, Trash2, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export default function CartDrawer() {
     const { cart, isCartOpen, setIsCartOpen, updateQuantity, removeFromCart, cartTotal } = useCart();
@@ -148,10 +149,14 @@ export default function CartDrawer() {
                                 {formatPrice(cartTotal)}
                             </span>
                         </div>
-                        <button className="w-full h-14 bg-brand-charcoal text-white font-body text-sm font-semibold rounded-2xl hover:bg-brand-rose transition-all shadow-soft flex items-center justify-center gap-3 group">
+                        <Link
+                            to="/checkout"
+                            onClick={() => setIsCartOpen(false)}
+                            className="w-full h-14 bg-brand-charcoal text-white font-body text-sm font-semibold rounded-2xl hover:bg-brand-rose transition-all shadow-soft flex items-center justify-center gap-3 group"
+                        >
                             Proceed to Checkout
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </Link>
                         <p className="text-center font-body text-[10px] text-brand-charcoal/40 mt-4">
                             Shipping and taxes calculated at checkout
                         </p>

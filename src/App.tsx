@@ -15,6 +15,10 @@ import { WishlistProvider } from './context/WishlistContext';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 
+import Checkout from './pages/Checkout';
+import Profile from './pages/Profile';
+import OrderDetails from './pages/OrderDetails';
+
 function App() {
   return (
     <CartProvider>
@@ -44,7 +48,12 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/returns" element={<ReturnPolicy />} />
             <Route path="/terms" element={<TermsPolicy />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/order/:id" element={<OrderDetails />} />
           </Routes>
+
+
 
           {/* Footer is on every page, but some pages might want their own layout if they have special needs. 
               For now, keeping it here is fine, but Navbar and Footer might need to know about the current route. */}

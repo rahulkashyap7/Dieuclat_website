@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { ShoppingBag, Menu, X, Heart } from 'lucide-react';
+import { ShoppingBag, Menu, X, Heart, User } from 'lucide-react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -101,6 +102,14 @@ export default function Navbar() {
               )}
             </button>
 
+            <Link
+              to="/profile"
+              className="relative w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-brand-charcoal transition-all shadow-soft hover:shadow-elevated"
+              aria-label="Profile"
+            >
+              <User className="w-4 h-4" />
+            </Link>
+
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-brand-charcoal transition-all shadow-soft hover:shadow-elevated"
@@ -113,6 +122,7 @@ export default function Navbar() {
                 </span>
               )}
             </button>
+
 
             {/* Mobile Menu Button */}
             <button
@@ -157,6 +167,14 @@ export default function Navbar() {
               </a>
             )
           ))}
+          <Link
+            to="/profile"
+            className="font-body text-base text-brand-charcoal/80 hover:text-brand-rose transition-colors flex items-center gap-2 pt-2 border-t border-brand-charcoal/5 w-full justify-center"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <User className="w-4 h-4" />
+            My Account
+          </Link>
         </div>
       </div>
     </nav>

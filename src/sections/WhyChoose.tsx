@@ -5,62 +5,6 @@ import { Gem, Palette, Leaf, Heart, Award, Truck, Sparkles, ArrowUpRight } from 
 
 gsap.registerPlugin(ScrollTrigger);
 
-const features = [
-  {
-    id: 1,
-    title: 'Premium Quality',
-    description: 'Handcrafted with the finest materials for lasting beauty and elegance.',
-    icon: Gem,
-    color: 'from-rose-400 to-pink-500',
-    bgColor: 'bg-rose-50',
-    size: 'large',
-  },
-  {
-    id: 2,
-    title: 'Fully Customizable',
-    description: 'Personalize every detail to match your unique vision.',
-    icon: Palette,
-    color: 'from-amber-400 to-orange-500',
-    bgColor: 'bg-amber-50',
-    size: 'small',
-  },
-  {
-    id: 3,
-    title: 'Eco-Friendly',
-    description: 'Sustainable packaging and responsibly sourced materials.',
-    icon: Leaf,
-    color: 'from-emerald-400 to-teal-500',
-    bgColor: 'bg-emerald-50',
-    size: 'small',
-  },
-  {
-    id: 4,
-    title: 'Made with Love',
-    description: 'Each piece is crafted with care and attention to detail.',
-    icon: Heart,
-    color: 'from-pink-400 to-rose-500',
-    bgColor: 'bg-pink-50',
-    size: 'small',
-  },
-  {
-    id: 5,
-    title: 'Best in Class',
-    description: 'Award-winning designs recognized for excellence.',
-    icon: Award,
-    color: 'from-violet-400 to-purple-500',
-    bgColor: 'bg-violet-50',
-    size: 'small',
-  },
-  {
-    id: 6,
-    title: 'Free Shipping',
-    description: 'Complimentary delivery on all orders across India.',
-    icon: Truck,
-    color: 'from-blue-400 to-indigo-500',
-    bgColor: 'bg-blue-50',
-    size: 'large',
-  },
-];
 
 export default function WhyChoose() {
   const sectionRef = useRef<HTMLElement>(null);

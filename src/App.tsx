@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import CustomCursor from './components/CustomCursor';
+import Loader from './components/Loader';
 import Navbar from './sections/Navbar';
 import Footer from './sections/Footer';
 import Home from './pages/Home';
@@ -20,10 +22,33 @@ import Profile from './pages/Profile';
 import OrderDetails from './pages/OrderDetails';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Initial page load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Show loader on route change
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
   return (
     <CartProvider>
       <WishlistProvider>
         <div className="relative bg-warm">
+          {/* Global Loader */}
+          <Loader isLoading={isLoading} />
+
           {/* Custom Cursor */}
           <CustomCursor />
 

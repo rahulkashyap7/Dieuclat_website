@@ -193,10 +193,10 @@ export default function DealOfDay() {
             <div key={index} className="text-center">
               <div className="relative w-16 h-16 lg:w-24 lg:h-24">
                 {/* Background with gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-rose to-brand-rose-light rounded-2xl lg:rounded-3xl shadow-glow" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-rose to-brand-rose-light rounded-xl lg:rounded-2xl shadow-glow" />
 
                 {/* Glass overlay */}
-                <div className="absolute inset-1 bg-white/20 backdrop-blur-sm rounded-xl lg:rounded-2xl flex items-center justify-center">
+                <div className="absolute inset-1 bg-white/20 backdrop-blur-sm rounded-lg lg:rounded-xl flex items-center justify-center">
                   <span className="font-display text-2xl lg:text-4xl text-white font-semibold">
                     {formatNumber(item.value)}
                   </span>
@@ -222,7 +222,7 @@ export default function DealOfDay() {
               ref={(el) => { cardsRef.current[index] = el; }}
               className="group"
             >
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-[2rem] overflow-hidden shadow-soft card-lift border border-white/50">
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden shadow-soft card-lift border border-white/50">
                 {/* Discount Badge */}
                 <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-brand-rose to-brand-rose-light rounded-full shadow-lg">
                   <Percent className="w-3 h-3 text-white" />

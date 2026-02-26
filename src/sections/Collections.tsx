@@ -129,7 +129,7 @@ export default function Collections() {
               ref={(el) => { cardsRef.current[index] = el; }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-soft">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-soft">
                 {/* Image */}
                 <img
                   src={collection.image}
@@ -168,7 +168,7 @@ export default function Collections() {
                 </div>
 
                 {/* Hover Border Effect */}
-                <div className="absolute inset-0 rounded-[2rem] border-2 border-white/0 group-hover:border-white/20 transition-colors duration-500" />
+                <div className="absolute inset-0 rounded-2xl border-2 border-white/0 group-hover:border-white/20 transition-colors duration-500" />
               </div>
             </div>
           ))}

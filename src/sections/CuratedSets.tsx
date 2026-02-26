@@ -118,9 +118,9 @@ export default function CuratedSets() {
               ref={(el) => { cardsRef.current[index] = el; }}
               className="group"
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-500 hover:shadow-elevated hover:-translate-y-1.5">
+              <div className="bg-white rounded-xl overflow-hidden shadow-soft transition-all duration-500 hover:shadow-elevated hover:-translate-y-1.5">
                 {/* Image */}
-                <Link to={`/product/${product.id}`} className="block aspect-[4/5] overflow-hidden relative">
+                <Link to={`/product/${product.id}`} className="block aspect-[1.15/1] overflow-hidden relative">
                   <img
                     src={product.image}
                     alt={product.name}

@@ -159,7 +159,7 @@ export default function CustomHamper() {
             width: 'min(34vw, 520px)',
           }}
         >
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden card-shadow">
+          <div className="aspect-[4/3] rounded-xl overflow-hidden card-shadow">
             <img
               src="https://ik.imagekit.io/72whyqnco/Products/10.jpg"
               alt="Custom hamper builder"
@@ -196,7 +196,7 @@ export default function CustomHamper() {
 
         {/* Mobile Preview Image */}
         <div className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 w-28 opacity-50">
-          <div className="aspect-square rounded-xl overflow-hidden card-shadow">
+          <div className="aspect-square rounded-lg overflow-hidden card-shadow">
             <img
               src="https://ik.imagekit.io/72whyqnco/Products/10.jpg"
               alt="Custom hamper builder"

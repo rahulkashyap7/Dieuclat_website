@@ -167,7 +167,7 @@ export default function FeaturedProduct() {
             width: 'min(34vw, 520px)',
           }}
         >
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden card-shadow">
+          <div className="aspect-[4/3] rounded-xl overflow-hidden card-shadow">
             <img
               src="https://ik.imagekit.io/72whyqnco/Products/5.jpg"
               alt="The Birthday Box"
@@ -188,7 +188,7 @@ export default function FeaturedProduct() {
           {thumbnails.map((thumb) => (
             <div
               key={thumb.id}
-              className="w-[72px] h-[72px] rounded-xl overflow-hidden card-shadow cursor-pointer hover:scale-105 transition-transform"
+              className="w-[72px] h-[72px] rounded-lg overflow-hidden card-shadow cursor-pointer hover:scale-105 transition-transform"
             >
               <img
                 src={thumb.image}
@@ -201,7 +201,7 @@ export default function FeaturedProduct() {
 
         {/* Mobile Featured Image */}
         <div className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 w-28 opacity-50">
-          <div className="aspect-square rounded-xl overflow-hidden card-shadow">
+          <div className="aspect-square rounded-lg overflow-hidden card-shadow">
             <img
               src="https://ik.imagekit.io/72whyqnco/Products/5.jpg"
               alt="The Birthday Box"

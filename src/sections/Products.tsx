@@ -204,7 +204,7 @@ export default function Products() {
               ref={(el) => { cardsRef.current[index] = el; }}
               className="group perspective"
             >
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden shadow-soft card-lift border border-white/50">
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-lg md:rounded-xl overflow-hidden shadow-soft card-lift border border-white/50">
                 {/* Tag */}
                 {product.tag && (
                   <div className={`absolute top-2 left-2 md:top-3 md:left-3 z-10 px-1.5 md:px-2.5 py-0.5 md:py-1 bg-gradient-to-r ${product.tagColor} rounded-full shadow-lg`}>
@@ -231,7 +231,7 @@ export default function Products() {
                 </div>
 
                 {/* Image */}
-                <Link to={`/product/${product.id}`} className="block aspect-square overflow-hidden bg-brand-cream/50">
+                <Link to={`/product/${product.id}`} className="block aspect-[1.15/1] overflow-hidden bg-brand-cream/50">
                   <img
                     src={product.image}
                     alt={product.name}

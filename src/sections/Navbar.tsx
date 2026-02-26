@@ -57,7 +57,7 @@ export default function Navbar() {
               alt="DIEUCLAT"
               className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-display text-xl font-semibold text-brand-charcoal tracking-tight">
+            <span className="hidden sm:inline-block font-display text-xl font-semibold text-brand-charcoal tracking-tight">
               DIEUCLAT
             </span>
           </Link>

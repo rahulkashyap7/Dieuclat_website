@@ -20,6 +20,7 @@ import WishlistDrawer from './components/WishlistDrawer';
 import Checkout from './pages/Checkout';
 import Profile from './pages/Profile';
 import OrderDetails from './pages/OrderDetails';
+import OfferPopup from './components/OfferPopup';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -63,6 +64,9 @@ function App() {
 
           {/* Wishlist Drawer */}
           <WishlistDrawer />
+
+          {/* Creative Offer Popup */}
+          <OfferPopup />
 
           <Routes>
             <Route path="/" element={<Home />} />

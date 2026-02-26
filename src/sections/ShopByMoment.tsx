@@ -113,7 +113,7 @@ export default function ShopByMoment() {
             <div
               key={category.id}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="group cursor-pointer relative overflow-hidden rounded-2xl lg:rounded-3xl"
+              className="group cursor-pointer relative overflow-hidden rounded-xl lg:rounded-2xl"
             >
               {/* Background Image */}
               <div className="aspect-[3/2] overflow-hidden">
